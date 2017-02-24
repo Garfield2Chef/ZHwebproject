@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="MySQL - zh_framework@101.200.132.87">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.0">
+    <root id="1"/>
+    <schema id="2" parent="1" name="zh_framework">
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="apn"/>
+    <schema id="4" parent="1" name="car_test"/>
+    <schema id="5" parent="1" name="information_schema"/>
+    <schema id="6" parent="1" name="message"/>
+    <schema id="7" parent="1" name="mysql"/>
+    <schema id="8" parent="1" name="performance_schema"/>
+    <schema id="9" parent="1" name="sys"/>
+    <schema id="10" parent="1" name="zh_car"/>
+    <schema id="11" parent="1" name="zh_car_obd"/>
+    <table id="12" parent="2" name="t_sys_log">
+      <Comment>日志表</Comment>
+    </table>
+    <table id="13" parent="2" name="t_sys_organization">
+      <Comment>单位/部门表</Comment>
+    </table>
+    <table id="14" parent="2" name="t_sys_resource"/>
+    <table id="15" parent="2" name="t_sys_resource_role"/>
+    <table id="16" parent="2" name="t_sys_role">
+      <Comment>角色表</Comment>
+    </table>
+    <table id="17" parent="2" name="t_sys_user">
+      <Comment>用户表</Comment>
+    </table>
+    <table id="18" parent="2" name="t_sys_user_org">
+      <Comment>单位用户表</Comment>
+    </table>
+    <table id="19" parent="2" name="t_sys_user_role">
+      <Comment>用户角色表</Comment>
+    </table>
+    <column id="20" parent="12" name="id">
+      <DataType>varchar(36)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="21" parent="12" name="msg">
+      <Comment>消息</Comment>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="22" parent="12" name="function">
+      <Comment>方法</Comment>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="23" parent="12" name="time">
+      <Comment>时间</Comment>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="24" parent="12" name="ip">
+      <Comment>ip地址</Comment>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="25" parent="12" name="userId">
+      <Comment>用户id</Comment>
+      <DataType>varchar(36)|0</DataType>
+    </column>
+    <key id="26" parent="12" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="27" parent="13" name="id">
+      <Comment>id（GUID）</Comment>
+      <DataType>varchar(36)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="28" parent="13" name="type">
+      <Comment>单位类型</Comment>
+      <DataType>varchar(36)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="29" parent="13" name="iconic">
+      <Comment>单位图标</Comment>
+      <DataType>varchar(200)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="30" parent="13" name="name">
+      <Comment>单位名称</Comment>
+      <DataType>varchar(200)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="31" parent="13" name="address">
+      <Comment>单位地址</Comment>
+      <DataType>varchar(200)|0</DataType>
+    </column>
+    <column id="32" parent="13" name="linkman">
+      <Comment>联系人</Comment>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="33" parent="13" name="linkPhone">
+      <Comment>联系电话</Comment>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="34" parent="13" name="parentId">
+      <Comment>上级单位id</Comment>
+      <DataType>varchar(36)|0</DataType>
+    </column>
+    <column id="35" parent="13" name="delFlag">
+      <Comment>标识1可用0不可用</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="36" parent="13" name="createUserId">
+      <Comment>登记人id</Comment>
+      <DataType>varchar(36)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="37" parent="13" name="createDate">
+      <Comment>登记时间</Comment>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="38" parent="13" name="updateUserId">
+      <Comment>修改人id</Comment>
+      <DataType>varchar(36)|0</DataType>
+    </column>
+    <column id="39" parent="13" name="updateDate">
+      <Comment>修改时间</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <key id="40" parent="13" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="41" parent="14" name="id">
+      <Comment>id（GUID）</Comment>
+      <DataType>varchar(36)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="42" parent="14" name="type">
+      <Comment>资源类型id</Comment>
+      <DataType>varchar(36)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="43" parent="14" name="index">
+      <Comment>资源排序</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="44" parent="14" name="name">
+      <Comment>资源名称</Comment>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="45" parent="14" name="url">
+      <Comment>资源Url</Comment>
+      <DataType>varchar(400)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="46" parent="14" name="delFlag">
+      <Comment>标识1可用0不可用</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="47" parent="14" name="parentId">
+      <Comment>上级资源id</Comment>
+      <DataType>varchar(36)|0</DataType>
+    </column>
+    <column id="48" parent="14" name="createUserId">
+      <Comment>登记人id</Comment>
+      <DataType>varchar(36)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="49" parent="14" name="createDate">
+      <Comment>登记时间</Comment>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="50" parent="14" name="updateUserId">
+      <Comment>修改人id</Comment>
+      <DataType>varchar(36)|0</DataType>
+    </column>
+    <column id="51" parent="14" name="updateDate">
+      <Comment>修改时间</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="52" parent="14" name="icon">
+      <Comment>图标路径</Comment>
+      <DataType>varchar(64)|0</DataType>
+    </column>
+    <key id="53" parent="14" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="54" parent="15" name="resoureId">
+      <Comment>资源id</Comment>
+      <DataType>varchar(36)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="55" parent="15" name="roleId">
+      <Comment>角色ID</Comment>
+      <DataType>varchar(36)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="56" parent="16" name="id">
+      <DataType>varchar(36)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="57" parent="16" name="name">
+      <Comment>角色名称</Comment>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="58" parent="16" name="delFlag">
+      <Comment>删除标志1：可用；0：删除；</Comment>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="59" parent="16" name="memo">
+      <Comment>备注</Comment>
+      <DataType>varchar(200)|0</DataType>
+    </column>
+    <column id="60" parent="16" name="createUserId">
+      <Comment>创建用户id</Comment>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="61" parent="16" name="createDate">
+      <Comment>创建日期</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="62" parent="16" name="updateUserId">
+      <Comment>更新用户id</Comment>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="63" parent="16" name="updateDate">
+      <Comment>修改时间</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <key id="64" parent="16" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="65" parent="17" name="id">
+      <DataType>varchar(36)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="66" parent="17" name="name">
+      <Comment>用户姓名</Comment>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="67" parent="17" name="loginname">
+      <Comment>登录用户名</Comment>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="68" parent="17" name="password">
+      <Comment>密码</Comment>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="69" parent="17" name="sex">
+      <Comment>性别</Comment>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="70" parent="17" name="birthday">
+      <Comment>出生年月</Comment>
+      <DataType>date|0</DataType>
+    </column>
+    <column id="71" parent="17" name="logintime">
+      <Comment>上次登录时间</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="72" parent="17" name="updatetime">
+      <Comment>修改时间</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="73" parent="17" name="createtime">
+      <Comment>创建时间</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="74" parent="17" name="createuserid">
+      <Comment>创建人id</Comment>
+      <DataType>varchar(36)|0</DataType>
+    </column>
+    <column id="75" parent="17" name="updateuserid">
+      <Comment>修改人id</Comment>
+      <DataType>varchar(36)|0</DataType>
+    </column>
+    <column id="76" parent="17" name="mobile">
+      <Comment>手机号码</Comment>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="77" parent="17" name="phone">
+      <Comment>电话号码</Comment>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="78" parent="17" name="mac">
+      <Comment>手机用的mac地址</Comment>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="79" parent="17" name="flag">
+      <Comment>标志是否有效</Comment>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="80" parent="17" name="email">
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="81" parent="17" name="loginFlag">
+      <Comment>是否可登录(1可用0不可用)</Comment>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="82" parent="17" name="loginDate">
+      <Comment>登陆时间</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="83" parent="17" name="loginIp">
+      <Comment>登陆ip</Comment>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="84" parent="17" name="photo">
+      <DataType>varchar(64)|0</DataType>
+    </column>
+    <column id="85" parent="17" name="oldLoginIp">
+      <Comment>上次登录ip</Comment>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="86" parent="17" name="oldLoginDate">
+      <Comment>上次登录时间</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="87" parent="17" name="delFlag">
+      <Comment>删除标志位</Comment>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="88" parent="17" name="username_UNIQUE">
+      <ColNames>name</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="89" parent="17" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="90" parent="17" name="username_UNIQUE">
+      <ColNames>name</ColNames>
+      <UnderlyingIndexName>username_UNIQUE</UnderlyingIndexName>
+    </key>
+    <column id="91" parent="18" name="orgId">
+      <Comment>单位ID</Comment>
+      <DataType>varchar(36)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="92" parent="18" name="userId">
+      <Comment>用户ID</Comment>
+      <DataType>varchar(36)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="93" parent="19" name="userId">
+      <Comment>用户ID</Comment>
+      <DataType>varchar(36)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="94" parent="19" name="roleId">
+      <Comment>角色ID</Comment>
+      <DataType>varchar(36)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+  </database-model>
+</dataSource>
